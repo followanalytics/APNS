@@ -27,7 +27,7 @@ module APNS
     sock, ssl = self.open_connection
 
     # prepares the messages to be send
-    notifications.each_with_index{|apns_notf, idx| apns_notf.message_identifier = [idx].pack('N')}
+    notifications.each_with_index{|apns_notf, idx| puts "POUET #{apns_notf.inspect}";apns_notf.message_identifier = [idx].pack('N')}
 
     # packs all notifications into a single pack
     packed_nofications = self.packed_nofications(notifications)
